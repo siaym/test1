@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Volunteering | Md Syful Islam Siyam</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0f111a;
+      --text: #e0e0e0;
+      --accent: #3a86ff;
+      --border: #3a86ff44;
+      --card-bg: #1a1d2a;
+    }
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      transform: translateY(100vh);
+      opacity: 0;
+      transition: transform 0.7s ease, opacity 0.7s ease;
+    }
+    nav {
+      background: #1b1d28;
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      padding: 1rem 2rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    nav a:hover,
+    nav a[aria-current="page"] {
+      color: var(--accent);
+    }
+    main {
+      padding: 120px 2rem 3rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: var(--accent);
+      text-align: center;
+      margin-bottom: 0.3rem;
+    }
+    .subtitle {
+      text-align: center;
+      color: #aaa;
+      margin-bottom: 3rem;
+    }
+    .section-title {
+      font-size: 1.6rem;
+      border-left: 4px solid var(--accent);
+      padding-left: 10px;
+      margin-top: 3rem;
+      margin-bottom: 1.5rem;
+    }
+    /* Organizations */
+    .org-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+      margin-bottom: 3rem;
+    }
+    .org-item {
+      background: var(--card-bg);
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      box-shadow: 0 0 10px #3a86ff11;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      cursor: default;
+      transition: transform 0.25s;
+    }
+    .org-item:hover {
+      transform: scale(1.02);
+    }
+    .org-icon {
+      background: var(--accent);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      color: var(--bg);
+      font-weight: 700;
+      font-size: 1.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+      box-shadow: 0 0 10px var(--accent);
+      flex-shrink: 0;
+    }
+    .org-details {
+      flex: 1;
+    }
+    .org-name {
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--accent);
+      margin-bottom: 0.2rem;
+    }
+    .org-desc {
+      color: #aaa;
+      font-size: 1rem;
+    }
+    /* Roles & Experiences */
+    .roles-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .role-item {
+      background: var(--card-bg);
+      padding: 1.2rem 1.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      box-shadow: 0 0 12px #3a86ff11;
+    }
+    .role-title {
+      font-weight: 600;
+      font-size: 1.2rem;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
+    }
+    .role-org {
+      color: #888;
+      font-size: 1rem;
+      font-style: italic;
+      margin-bottom: 0.5rem;
+    }
+    .role-desc {
+      font-size: 1rem;
+      color: #ccc;
+      line-height: 1.4;
+    }
+    #dark-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--text);
+      z-index: 999;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<button id="dark-toggle">🌙</button>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="skills.html">Skills</a>
+  <a href="projects.html">Projects</a>
+  <a href="education.html">Education</a>
+  <a href="volunteering.html" aria-current="page">Volunteering</a>
+  <a href="languages.html">Languages</a>
+  <a href="future-goals.html">Future Goals</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<main>
+  <h1>Volunteering</h1>
+  <p class="subtitle">Contributing time and skills to community development and disaster relief</p>
+
+  <h2 class="section-title">Organizations</h2>
+  <div class="org-list">
+    <div class="org-item" title="Bangladesh Red Crescent Society">
+      <div class="org-icon">BDR</div>
+      <div class="org-details">
+        <div class="org-name">Bangladesh Red Crescent Society (BDRCS)</div>
+        <div class="org-desc">Participated in disaster relief efforts and community health initiatives.</div>
+      </div>
+    </div>
+    <div class="org-item" title="Youth Action For Social Development">
+      <div class="org-icon">YASD</div>
+      <div class="org-details">
+        <div class="org-name">Youth Action For Social Development (YASD)</div>
+        <div class="org-desc">Engaged in youth empowerment programs and social awareness campaigns.</div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title">Roles & Experiences</h2>
+  <div class="roles-list">
+    <div class="role-item">
+      <div class="role-title">Volunteer - Disaster Relief</div>
+      <div class="role-org">Bangladesh Red Crescent Society</div>
+      <div class="role-desc">
+        Assisted in emergency response during floods and natural disasters by providing logistical support and community outreach.
+      </div>
+    </div>
+    <div class="role-item">
+      <div class="role-title">Community Organizer</div>
+      <div class="role-org">Youth Action For Social Development</div>
+      <div class="role-desc">
+        Coordinated local events and workshops focused on youth engagement, education, and social welfare projects.
+      </div>
+    </div>
+  </div>
+</main>
+
+<script>
+  // Dark Mode Toggle
+  const toggle = document.getElementById('dark-toggle');
+  toggle.onclick = () => {
+    document.body.classList.toggle('dark');
+    localStorage.setItem('darkMode', document.body.classList.contains('dark'));
+    toggle.textContent = document.body.classList.contains('dark') ? "☀️" : "🌙";
+  };
+  if (localStorage.getItem('darkMode') === 'true') {
+    document.body.classList.add('dark');
+    toggle.textContent = "☀️";
+  }
+
+  // Scroll Page Transition
+  const pages = [
+    "index.html", "about.html", "skills.html", "projects.html",
+    "education.html", "volunteering.html", "languages.html",
+    "future-goals.html", "contact.html"
+  ];
+  let scrollTimeout, isTransitioning = false;
+  function navigate(current, dir) {
+    if (isTransitioning) return;
+    isTransitioning = true;
+    const i = pages.indexOf(current);
+    const ni = dir === "down" ? i + 1 : i - 1;
+    if (ni < 0 || ni >= pages.length) return;
+    document.body.style.transition = "transform 0.5s ease, opacity 0.5s ease";
+    document.body.style.transform = dir === "down" ? "translateY(-100vh)" : "translateY(100vh)";
+    document.body.style.opacity = "0";
+    setTimeout(() => window.location.href = pages[ni], 500);
+  }
+  window.addEventListener("wheel", (e) => {
+    if (scrollTimeout) return;
+    const current = window.location.pathname.split("/").pop() || "index.html";
+    if (e.deltaY > 0) navigate(current, "down");
+    else if (e.deltaY < 0) navigate(current, "up");
+    scrollTimeout = setTimeout(() => scrollTimeout = null, 700);
+  });
+  window.onload = () => {
+    document.body.style.transform = "translateY(0)";
+    document.body.style.opacity = "1";
+  };
+</script>
+
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Future Goals | Md Syful Islam Siyam</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0f111a;
+      --text: #e0e0e0;
+      --accent: #3a86ff;
+      --border: #3a86ff44;
+      --card-bg: #1a1d2a;
+    }
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      transform: translateY(100vh);
+      opacity: 0;
+      transition: transform 0.7s ease, opacity 0.7s ease;
+    }
+    nav {
+      background: #1b1d28;
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      padding: 1rem 2rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    nav a:hover,
+    nav a[aria-current="page"] {
+      color: var(--accent);
+    }
+    main {
+      padding: 120px 2rem 3rem;
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
+    }
+    .subtitle {
+      color: #aaa;
+      margin-bottom: 3rem;
+      font-size: 1.1rem;
+    }
+    .goals-list {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem 3rem;
+      box-shadow: 0 0 12px #3a86ff22;
+      font-size: 1.15rem;
+      line-height: 1.6;
+      text-align: left;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+    #dark-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--text);
+      z-index: 999;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<button id="dark-toggle">🌙</button>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="skills.html">Skills</a>
+  <a href="projects.html">Projects</a>
+  <a href="education.html">Education</a>
+  <a href="volunteering.html">Volunteering</a>
+  <a href="languages.html">Languages</a>
+  <a href="future-goals.html" aria-current="page">Future Goals</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<main>
+  <h1>Future Goals</h1>
+  <p class="subtitle">Ambitions shaping my journey and impact in technology and cybersecurity</p>
+
+  <div class="goals-list">
+    <ul>
+      <li><strong>Become a globally recognized cybersecurity expert and system architect.</strong></li>
+      <li><strong>Design and build secure, scalable real-time embedded systems.</strong></li>
+      <li><strong>Obtain advanced degrees and certifications in cybersecurity and embedded systems.</strong></li>
+      <li><strong>Contribute to impactful open-source projects and security research.</strong></li>
+      <li><strong>Mentor aspiring tech professionals and foster community growth.</strong></li>
+    </ul>
+  </div>
+</main>
+
+<script>
+  // Dark Mode Toggle
+  const toggle = document.getElementById('dark-toggle');
+  toggle.onclick = () => {
+    document.body.classList.toggle('dark');
+    localStorage.setItem('darkMode', document.body.classList.contains('dark'));
+    toggle.textContent = document.body.classList.contains('dark') ? "☀️" : "🌙";
+  };
+  if (localStorage.getItem('darkMode') === 'true') {
+    document.body.classList.add('dark');
+    toggle.textContent = "☀️";
+  }
+
+  // Scroll Page Transition
+  const pages = [
+    "index.html", "about.html", "skills.html", "projects.html",
+    "education.html", "volunteering.html", "languages.html",
+    "future-goals.html", "contact.html"
+  ];
+  let scrollTimeout, isTransitioning = false;
+  function navigate(current, dir) {
+    if (isTransitioning) return;
+    isTransitioning = true;
+    const i = pages.indexOf(current);
+    const ni = dir === "down" ? i + 1 : i - 1;
+    if (ni < 0 || ni >= pages.length) return;
+    document.body.style.transition = "transform 0.5s ease, opacity 0.5s ease";
+    document.body.style.transform = dir === "down" ? "translateY(-100vh)" : "translateY(100vh)";
+    document.body.style.opacity = "0";
+    setTimeout(() => window.location.href = pages[ni], 500);
+  }
+  window.addEventListener("wheel", (e) => {
+    if (scrollTimeout) return;
+    const current = window.location.pathname.split("/").pop() || "index.html";
+    if (e.deltaY > 0) navigate(current, "down");
+    else if (e.deltaY < 0) navigate(current, "up");
+    scrollTimeout = setTimeout(() => scrollTimeout = null, 700);
+  });
+  window.onload = () => {
+    document.body.style.transform = "translateY(0)";
+    document.body.style.opacity = "1";
+  };
+</script>
+
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Education | Md Syful Islam Siyam</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0f111a;
+      --text: #e0e0e0;
+      --accent: #3a86ff;
+      --border: #3a86ff44;
+      --card-bg: #1a1d2a;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      transform: translateY(100vh);
+      opacity: 0;
+      transition: transform 0.7s ease, opacity 0.7s ease;
+    }
+
+    nav {
+      background: #1b1d28;
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      padding: 1rem 2rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    nav a:hover,
+    nav a[aria-current="page"] {
+      color: var(--accent);
+    }
+
+    main {
+      padding: 120px 2rem 3rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: var(--accent);
+      text-align: center;
+      margin-bottom: 0.3rem;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #aaa;
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      border-left: 4px solid var(--accent);
+      padding-left: 10px;
+      margin-top: 3rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Timeline Section */
+    .edu-timeline {
+      border-left: 2px solid var(--border);
+      padding-left: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    .edu-item {
+      position: relative;
+    }
+
+    .edu-item::before {
+      content: '';
+      position: absolute;
+      left: -1.1rem;
+      top: 0;
+      width: 12px;
+      height: 12px;
+      background: var(--accent);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--accent);
+    }
+
+    .edu-item h3 {
+      font-size: 1.4rem;
+      color: var(--accent);
+      margin-bottom: 0.2rem;
+    }
+
+    .edu-item span {
+      font-size: 0.95rem;
+      color: #aaa;
+    }
+
+    .edu-item p {
+      font-size: 1rem;
+      color: #ccc;
+      margin-top: 0.3rem;
+    }
+
+    /* Certificates */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .cert-card {
+      background: var(--card-bg);
+      padding: 1rem 1.2rem;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      box-shadow: 0 0 10px #3a86ff11;
+      transition: transform 0.3s;
+    }
+
+    .cert-card:hover {
+      transform: scale(1.02);
+    }
+
+    .cert-card h4 {
+      margin: 0;
+      color: var(--accent);
+      font-size: 1.1rem;
+    }
+
+    .cert-card span {
+      display: block;
+      color: #aaa;
+      font-size: 0.9rem;
+      margin: 0.3rem 0;
+    }
+
+    .cert-card p {
+      font-size: 0.95rem;
+      color: #ccc;
+    }
+
+    #dark-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--text);
+      z-index: 999;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<button id="dark-toggle">🌙</button>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="skills.html">Skills</a>
+  <a href="projects.html">Projects</a>
+  <a href="education.html" aria-current="page">Education</a>
+  <a href="volunteering.html">Volunteering</a>
+  <a href="languages.html">Languages</a>
+  <a href="future-goals.html">Future Goals</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<main>
+  <h1>Education</h1>
+  <p class="subtitle">Academic journey and achievements so far</p>
+
+  <!-- Education Section -->
+  <h2 class="section-title">Academic Background</h2>
+  <div class="edu-timeline">
+    <div class="edu-item">
+      <h3>B.Sc. in Computer Science & Engineering</h3>
+      <span>Daffodil International University — Ongoing</span>
+      <p>Focusing on real-time systems, cybersecurity, and clean code principles.</p>
+    </div>
+
+    <div class="edu-item">
+      <h3>Higher Secondary Certificate (HSC)</h3>
+      <span>BIRSHRESTHO Noor Mohammad Public School and College — GPA: 5.00</span>
+      <p>Strong academic performance in science stream, with emphasis on computing and mathematics.</p>
+    </div>
+  </div>
+
+  <!-- Certificate Section -->
+  <h2 class="section-title">Certificates</h2>
+  <div class="cert-grid">
+    <div class="cert-card">
+      <h4>Introduction to Cybersecurity</h4>
+      <span>Coursera · 2024</span>
+      <p>Covered network threats, secure design principles, and ethical hacking basics.</p>
+    </div>
+    <div class="cert-card">
+      <h4>Modern Web Application Security</h4>
+      <span>Udemy · 2024</span>
+      <p>Focused on OWASP top 10 vulnerabilities and secure coding practices in JavaScript.</p>
+    </div>
+    <div class="cert-card">
+      <h4>Data Structures & Algorithms</h4>
+      <span>Programming Hero · 2023</span>
+      <p>Strengthened algorithmic thinking and C++ proficiency.</p>
+    </div>
+  </div>
+
+</main>
+
+<script>
+  // Dark Mode Toggle
+  const toggle = document.getElementById('dark-toggle');
+  toggle.onclick = () => {
+    document.body.classList.toggle('dark');
+    localStorage.setItem('darkMode', document.body.classList.contains('dark'));
+    toggle.textContent = document.body.classList.contains('dark') ? "☀️" : "🌙";
+  };
+  if (localStorage.getItem('darkMode') === 'true') {
+    document.body.classList.add('dark');
+    toggle.textContent = "☀️";
+  }
+
+  // Scroll Page Transition
+  const pages = [
+    "index.html", "about.html", "skills.html", "projects.html",
+    "education.html", "volunteering.html", "languages.html",
+    "future-goals.html", "contact.html"
+  ];
+  let scrollTimeout, isTransitioning = false;
+  function navigate(current, dir) {
+    if (isTransitioning) return;
+    isTransitioning = true;
+    const i = pages.indexOf(current);
+    const ni = dir === "down" ? i + 1 : i - 1;
+    if (ni < 0 || ni >= pages.length) return;
+    document.body.style.transition = "transform 0.5s ease, opacity 0.5s ease";
+    document.body.style.transform = dir === "down" ? "translateY(-100vh)" : "translateY(100vh)";
+    document.body.style.opacity = "0";
+    setTimeout(() => window.location.href = pages[ni], 500);
+  }
+
+  window.addEventListener("wheel", (e) => {
+    if (scrollTimeout) return;
+    const current = window.location.pathname.split("/").pop() || "index.html";
+    if (e.deltaY > 0) navigate(current, "down");
+    else if (e.deltaY < 0) navigate(current, "up");
+    scrollTimeout = setTimeout(() => scrollTimeout = null, 700);
+  });
+
+  window.onload = () => {
+    document.body.style.transform = "translateY(0)";
+    document.body.style.opacity = "1";
+  };
+</script>
+
+</body>
+</html>
